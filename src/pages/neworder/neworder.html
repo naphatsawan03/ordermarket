@@ -1,0 +1,36 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>New Order Market</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<form [formGroup]="formActivity" (ngSubmit)="saveRecord()">
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" name="category" [(ngModel)]="category" placefolder="Category"
+        formControlName="category">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="title" [(ngModel)]="title" placefolder="Title"
+        formControlName="title">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="description" [(ngModel)]="description" placefolder="Description"
+        formControlName="description">
+      </ion-input>
+    </ion-item>
+  </ion-list>
+  <div class="row">
+    <div class="col col-50">
+      <button ion-button type="submit" [disabled]="!formActivity.valid">
+        Save
+      </button>
+    </div>
+  </div>
+
+</form>
+</ion-content>
